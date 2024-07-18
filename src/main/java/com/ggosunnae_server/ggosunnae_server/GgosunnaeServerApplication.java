@@ -9,5 +9,5 @@ public class GgosunnaeServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GgosunnaeServerApplication.class, args);
 	}
-	///
+	//
 }
