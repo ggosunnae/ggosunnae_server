@@ -45,7 +45,7 @@ public class User {
     @OneToOne(mappedBy = "user")
     private AuthProvider authProvider;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private AlertApprove alertApprove;
 }
 
