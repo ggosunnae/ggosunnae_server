@@ -3,7 +3,6 @@ package com.ggosunnae_server.ggosunnae_server.api.entity.post;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Entity
 @Table(name = "GSNDetail")
 @Getter
