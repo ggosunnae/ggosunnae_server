@@ -1,10 +1,7 @@
 package com.ggosunnae_server.ggosunnae_server.api.entity.dogbreed;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "DogBreed")
@@ -18,6 +15,6 @@ public class DogBreed {
     @Column(name = "dog_breed_id")
     private Integer id;
 
-    @Column(name = "dog_breed")
+    @Column(name = "dog_breed", length = 100)
     private String dogBreed;
 }

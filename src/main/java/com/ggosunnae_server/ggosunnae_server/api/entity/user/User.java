@@ -20,47 +20,33 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "nickName")
-    private String nickName;
+    @Column(name = "user_name")
+    private String userName;
 
-    @Column(name = "profile_url")
-    private String profileUrl;
+    @Column(name = "profile_image")
+    private String profileImage;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "userType", nullable = false)
     private UserType userType;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private Notification notification;
+    @OneToMany(mappedBy = "user")
+    private Set<Post> posts;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @OneToMany(mappedBy = "user")
+    private Set<PostLike> postLikes;
+
+    @OneToMany(mappedBy = "user")
+    private Set<PostComment> postComments;
+
+    @OneToMany(mappedBy = "user")
+    private Set<PostScrap> postScraps;
+
+    @OneToOne(mappedBy = "user")
     private AuthProvider authProvider;
 
-    @OneToMany(mappedBy = "user")
-    private Set<DailyPost> dailyPosts;
-
-    @OneToMany(mappedBy = "user")
-    private Set<DailyPostLike> dailyPostLikes;
-
-    @OneToMany(mappedBy = "user")
-    private Set<DailyPostComment> dailyPostComments;
-
-    @OneToMany(mappedBy = "user")
-    private Set<DailyPostScrap> dailyPostScraps;
-
-    @OneToMany(mappedBy = "user")
-    private Set<LookbookPost> lookbookPosts;
-
-    @OneToMany(mappedBy = "user")
-    private Set<LookbookPostLike> lookbookPostLikes;
-
-    @OneToMany(mappedBy = "user")
-    private Set<LookbookPostComment> lookbookPostComments;
-
-    @OneToMany(mappedBy = "user")
-    private Set<LookbookPostScrap> lookbookPostScraps;
+    @OneToOne(mappedBy = "user")
+    private AlertApprove alertApprove;
 }
 
 enum UserType {

@@ -1,10 +1,7 @@
-package com.ggosunnae_server.ggosunnae_server.api.entity.style;
+package com.ggosunnae_server.ggosunnae_server.api.entity.post;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "StylePoint")
@@ -16,8 +13,9 @@ public class StylePoint {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "style_point_id")
-    private Integer id;
+    private Long id;
 
-    @Column(name = "style_name")
+    @Column(name = "style_name", length = 20)
     private String styleName;
 }
+

@@ -1,6 +1,5 @@
 package com.ggosunnae_server.ggosunnae_server.api.entity.post;
 
-import com.ggosunnae_server.ggosunnae_server.api.entity.dogbreed.DogBreed;
 import com.ggosunnae_server.ggosunnae_server.api.entity.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,12 +8,12 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
 @Entity
-@Table(name = "DailyPostScrap")
+@Table(name = "PostScrap")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class DailyPostScrap {
+public class PostScrap {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "scrap_id")
@@ -24,19 +23,10 @@ public class DailyPostScrap {
     private boolean isScrap;
 
     @ManyToOne
-    @JoinColumn(name = "daily_id")
-    private DailyPost dailyPost;
-
-    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "tag_id")
-    private Tag tag;
-
-    @ManyToOne
-    @JoinColumn(name = "dog_breed_id")
-    private DogBreed dogBreed;
+    @JoinColumn(name = "post_id")
+    private Post post;
 }
-

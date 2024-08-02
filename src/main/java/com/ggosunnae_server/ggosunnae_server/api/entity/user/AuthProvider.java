@@ -22,7 +22,6 @@ public class AuthProvider {
     private String socialType;
 
     @OneToOne
-    @MapsId
     @JoinColumn(name = "user_id")
     private User user;
 }
