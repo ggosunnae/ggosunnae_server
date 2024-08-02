@@ -1,5 +1,7 @@
 package com.ggosunnae_server.ggosunnae_server.api.entity.post;
 
+import com.ggosunnae_server.ggosunnae_server.api.entity.post.LookbookDetail;
+import com.ggosunnae_server.ggosunnae_server.api.entity.post.GSNDetail;
 import com.ggosunnae_server.ggosunnae_server.api.entity.dogbreed.DogBreed;
 import com.ggosunnae_server.ggosunnae_server.api.entity.user.User;
 import jakarta.persistence.*;
